@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{DA13D842-49B4-43C0-9B5A-7C54748D8837}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "service", "service", "{72628004-AA2E-4682-9BE7-6C71F82DAB47}"
+	ProjectSection(SolutionItems) = preProject
+		core\service\IService.h = core\service\IService.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{37A497A3-E872-45D2-845A-8C4F058021F4}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72628004-AA2E-4682-9BE7-6C71F82DAB47} = {DA13D842-49B4-43C0-9B5A-7C54748D8837}
+		{37A497A3-E872-45D2-845A-8C4F058021F4} = {DA13D842-49B4-43C0-9B5A-7C54748D8837}
+	EndGlobalSection
+EndGlobal
