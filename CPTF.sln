@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{DA13D842-49B4-43C0-9B5A-7C54748D8837}"
+	ProjectSection(SolutionItems) = preProject
+		core\TypeDefine.h = core\TypeDefine.h
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "service", "service", "{72628004-AA2E-4682-9BE7-6C71F82DAB47}"
 	ProjectSection(SolutionItems) = preProject
@@ -10,7 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "service", "service", "{7262
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{37A497A3-E872-45D2-845A-8C4F058021F4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WtlDemo", "WtlDemo\WtlDemo.vcproj", "{F136CFBB-BDC7-4A5A-BA31-33F0793A52A9}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F136CFBB-BDC7-4A5A-BA31-33F0793A52A9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F136CFBB-BDC7-4A5A-BA31-33F0793A52A9}.Debug|Win32.Build.0 = Debug|Win32
+		{F136CFBB-BDC7-4A5A-BA31-33F0793A52A9}.Release|Win32.ActiveCfg = Release|Win32
+		{F136CFBB-BDC7-4A5A-BA31-33F0793A52A9}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
