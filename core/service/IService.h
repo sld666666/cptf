@@ -10,8 +10,9 @@ namespace core{
 		virtual ~IService(){}
 
 	public:
-		virtual	ulong addRef();
-		virtual ulong releaseRef();
+		virtual	void*	queryInterface(ulong iid)=0;
+		virtual	ulong	addRef()=0;
+		virtual ulong	releaseRef()=0;
 	};
 }
 
