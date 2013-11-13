@@ -2,5 +2,5 @@
 #define CORE_TYPEDEFINE_H
 
 typedef unsigned long ulong;
-
+typedef unsigned int  uint;
 #endif

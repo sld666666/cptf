@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{DA13D842-4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "service", "service", "{72628004-AA2E-4682-9BE7-6C71F82DAB47}"
 	ProjectSection(SolutionItems) = preProject
+		core\service\IDispatch.h = core\service\IDispatch.h
 		core\service\IService.h = core\service\IService.h
 	EndProjectSection
 EndProject
