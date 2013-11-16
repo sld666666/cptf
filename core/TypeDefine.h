@@ -3,4 +3,6 @@
 
 typedef unsigned long ulong;
 typedef unsigned int  uint;
+
+typedef struct interface;
 #endif

@@ -2,8 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="WtlDemo"
-	ProjectGUID="{F136CFBB-BDC7-4A5A-BA31-33F0793A52A9}"
+	Name="core"
+	ProjectGUID="{23882744-254A-4CB0-B45D-1AA68CF1154C}"
+	RootNamespace="core"
 	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
@@ -16,11 +17,10 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)\Debug"
-			IntermediateDirectory="$(SolutionDir)\Debug"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="1"
+			CharacterSet="2"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -36,25 +36,13 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
-				PreprocessorDefinitions="_DEBUG"
-				MkTypLibCompatible="false"
-				TargetEnvironment="1"
-				GenerateStublessProxies="true"
-				TypeLibraryName="$(IntDir)/WtlDemo.tlb"
-				HeaderFileName="WtlDemo.h"
-				DLLDataFileName=""
-				InterfaceIdentifierFileName="WtlDemo_i.c"
-				ProxyFileName="WtlDemo_p.c"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../core"
-				PreprocessorDefinitions="WIN32;_WINDOWS;STRICT;_DEBUG"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="1"
-				UsePrecompiledHeader="2"
+				RuntimeLibrary="3"
 				WarningLevel="3"
 				DebugInformationFormat="4"
 			/>
@@ -63,18 +51,13 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG"
-				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				LinkIncremental="2"
 				GenerateDebugInformation="true"
-				SubSystem="2"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -101,11 +84,11 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="Release"
-			IntermediateDirectory="Release"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			ATLMinimizesCRunTimeLibraryUsage="true"
-			CharacterSet="1"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -121,41 +104,30 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
-				PreprocessorDefinitions="NDEBUG"
-				MkTypLibCompatible="false"
-				TargetEnvironment="1"
-				GenerateStublessProxies="true"
-				TypeLibraryName="$(IntDir)/WtlDemo.tlb"
-				HeaderFileName="WtlDemo.h"
-				DLLDataFileName=""
-				InterfaceIdentifierFileName="WtlDemo_i.c"
-				ProxyFileName="WtlDemo_p.c"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="WIN32;_WINDOWS;STRICT;NDEBUG"
-				ExceptionHandling="0"
-				RuntimeLibrary="0"
-				UsePrecompiledHeader="2"
+				Optimization="2"
+				EnableIntrinsicFunctions="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
 				WarningLevel="3"
-				DebugInformationFormat="0"
+				DebugInformationFormat="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
-				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				LinkIncremental="1"
-				SubSystem="2"
+				GenerateDebugInformation="true"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -185,68 +157,49 @@
 	</References>
 	<Files>
 		<Filter
-			Name="Source Files"
-			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm"
+			Name="service"
 			>
 			<File
-				RelativePath=".\stdafx.cpp"
+				RelativePath=".\service\DispatchImpl.h"
 				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\WtlDemo.cpp"
+				RelativePath=".\service\IDispatch.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\IService.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\IUnkown.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\ObjectRoot.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\ServiceClass.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\ServiceCreator.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\ServiceObject.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\ThreadModel.h"
 				>
 			</File>
 		</Filter>
-		<Filter
-			Name="Header Files"
-			Filter="h;hpp;hxx;hm;inl;inc"
+		<File
+			RelativePath=".\TypeDefine.h"
 			>
-			<File
-				RelativePath=".\AboutDlg.h"
-				>
-			</File>
-			<File
-				RelativePath=".\MainDlg.h"
-				>
-			</File>
-			<File
-				RelativePath=".\resource.h"
-				>
-			</File>
-			<File
-				RelativePath=".\stdafx.h"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="Resource Files"
-			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;manifest"
-			>
-			<File
-				RelativePath=".\res\WtlDemo.ico"
-				>
-			</File>
-			<File
-				RelativePath=".\WtlDemo.rc"
-				>
-			</File>
-		</Filter>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

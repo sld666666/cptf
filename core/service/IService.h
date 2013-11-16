@@ -8,11 +8,7 @@ namespace core{
 	public:
 		IService(){}
 		virtual ~IService(){}
-
-	public:
-		virtual	void*	queryInterface(ulong iid)=0;
-		virtual	ulong	addRef()=0;
-		virtual ulong	releaseRef()=0;
+		
 	};
 }
 }
