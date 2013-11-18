@@ -3,6 +3,13 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #pragma once
+#include "service/IDispatch.h"
+
+using namespace cptf::core;
+
+interface IMath : public IDispatch{
+
+}
 
 class CMainDlg : public CDialogImpl<CMainDlg>, public CUpdateUI<CMainDlg>,
 		public CMessageFilter, public CIdleHandler
@@ -81,7 +88,6 @@ public:
 	LRESULT OnOK(WORD /*wNotifyCode*/, WORD wID, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 	{
 		// TODO: Add validation code 
-		CloseDialog(wID);
 		return 0;
 	}
 
