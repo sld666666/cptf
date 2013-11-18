@@ -4,6 +4,7 @@
 namespace cptf{
 namespace core{
 
+	template <typename T>
 	class ServiceCreator{
 
 	public:
@@ -11,8 +12,18 @@ namespace core{
 		virtual ~ServiceCreator(){}
 
 	public:
-		bool	createInstance();
+		static bool	createInstance(IID iid, T* rtnObj);
 	};
+
+	template <typename T>
+	bool ServiceCreator<T>::createInstance(IID iid
+										, T* rtnObj)
+	{
+		bool rtn(false);
+		
+		return rtn;
+	}	 
+
 }
 }
 
