@@ -7,7 +7,10 @@
 
 using namespace cptf::core;
 
-interface IMath : public IDispatch{
+cptf::interface IMath : public IDispatch{
+	virtual IID getIID(){
+		return GENERATE_IID(L"114003cf-505f-11e3-9ce6-00269e1e5da0");
+	}
 
 }
 

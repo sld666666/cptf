@@ -1,10 +1,19 @@
 #ifndef CORE_TYPEDEFINE_H
 #define CORE_TYPEDEFINE_H
 
-typedef unsigned long ulong;
-typedef unsigned int  uint;
+#include "StdLibInclude.h"
 
-typedef struct interface;
+namespace cptf{
 
-typedef unsigned long IID;
+	#define struct interface
+
+	#define const shared_ptr<boost::uuids::uuid> IID
+
+	inline  IID GENERATE_IID(const std::wstring& str){
+		using boost::uuids::uuid;
+		shared_ptr<uuid> rtnIID(new uuid(boost::uuids::string_generator(str.c_str())));
+		return rtnIID;
+	} 	
+}
+
 #endif

@@ -1,19 +1,16 @@
 #ifndef CORE_SERVICE_IDISPATCH_H
 #define CORE_SERVICE_IDISPATCH_H
 #include "../TypeDefine.h"
+#include "IService.h"
 
 namespace cptf{
 namespace core{
 
-	class IDispatch{
+	cptf::interface IDispatch /*:public IService*/{
 
-	public:
-		IDispatch(){}
-		virtual ~IDispatch(){}
-	
-	public:
-		virtual uint getTypeInfoCount() = 0;
-		virtual bool invoke()=0;
+// 		virtual uint getTypeInfoCount() = 0;
+// 		virtual bool invoke()=0;
+		virtual IID getIID() = 0;
 
 	};
 }

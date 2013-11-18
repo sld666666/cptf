@@ -197,6 +197,10 @@
 			</File>
 		</Filter>
 		<File
+			RelativePath=".\StdLibInclude.h"
+			>
+		</File>
+		<File
 			RelativePath=".\TypeDefine.h"
 			>
 		</File>
