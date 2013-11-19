@@ -6,7 +6,9 @@
 #include <boost/cstdint.hpp>
 
 using boost::shared_ptr;
+using boost::uuids::uuid;
 
 #include <string>
+
 using std::wstring;
 #endif

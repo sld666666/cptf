@@ -3,16 +3,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "service/IDispatch.h"
 
-using namespace cptf::core;
-
-cptf::interface IMath : public IDispatch{
-	virtual IID getIID(){
-		return GENERATE_IID(L"114003cf-505f-11e3-9ce6-00269e1e5da0");
-	}
-
-}
 
 class CMainDlg : public CDialogImpl<CMainDlg>, public CUpdateUI<CMainDlg>,
 		public CMessageFilter, public CIdleHandler

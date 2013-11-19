@@ -5,13 +5,13 @@
 
 namespace cptf{
 
-	#define struct interface
+	#define interfacecptf struct 
 
-	#define const shared_ptr<boost::uuids::uuid> IID
+ 	typedef shared_ptr<uuid> IID;
 
-	inline  IID GENERATE_IID(const std::wstring& str){
-		using boost::uuids::uuid;
-		shared_ptr<uuid> rtnIID(new uuid(boost::uuids::string_generator(str.c_str())));
+	inline  IID GENERATEIID(const std::wstring& str){
+		boost::uuids::string_generator gen;
+		IID rtnIID(new uuid(gen(str)));
 		return rtnIID;
 	} 	
 }

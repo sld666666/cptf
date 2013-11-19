@@ -14,6 +14,18 @@
 
 CAppModule _Module;
 
+#include "service/IDispatch.h"
+#include "TypeDefine.h"
+
+
+interfacecptf IMath : public IDispatch{
+
+	virtual cptf::IID getIID(){
+		return cptf::GENERATEIID(L"114003cf-505f-11e3-9ce6-00269e1e5da0");
+	}
+
+};
+
 int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 {
 	CMessageLoop theLoop;
