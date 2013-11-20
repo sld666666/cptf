@@ -172,6 +172,10 @@
 				RelativePath=".\utils\ApplicationPath.h"
 				>
 			</File>
+			<File
+				RelativePath=".\utils\MetaObject.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="service"
@@ -210,6 +214,10 @@
 			</File>
 			<File
 				RelativePath=".\service\ServiceClassFactory.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\ServiceConfig.h"
 				>
 			</File>
 			<File
