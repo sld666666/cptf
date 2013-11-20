@@ -16,9 +16,11 @@ CAppModule _Module;
 
 #include "service/IDispatch.h"
 #include "TypeDefine.h"
+#include "service/CptfServiceModel.h"
 
+using namespace cptf::core;
 
-interfacecptf IMath : public IDispatch{
+interfacecptf IMath : public cptf::core::IDispatch{
 
 	virtual cptf::IID getIID(){
 		return cptf::GENERATEIID(L"114003cf-505f-11e3-9ce6-00269e1e5da0");
@@ -38,6 +40,8 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 		ATLTRACE(_T("Main dialog creation failed!\n"));
 		return 0;
 	}
+	CptfServiceModel model;
+	model.init();
 
 	dlgMain.ShowWindow(nCmdShow);
 

@@ -3,8 +3,9 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="core"
-	ProjectGUID="{23882744-254A-4CB0-B45D-1AA68CF1154C}"
+	ProjectGUID="{E79B31C7-7535-4EFF-B7AB-E70A74BC4F5A}"
 	RootNamespace="core"
+	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
@@ -17,10 +18,10 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="1"
-			CharacterSet="2"
+			OutputDirectory="$(SolutionDir)\Debug"
+			IntermediateDirectory="$(SolutionDir)\Debug"
+			ConfigurationType="2"
+			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -40,9 +41,11 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;CORE_EXPORTS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
+				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="4"
 			/>
@@ -57,7 +60,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				LinkIncremental="2"
 				GenerateDebugInformation="true"
+				SubSystem="2"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -86,8 +91,8 @@
 			Name="Release|Win32"
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="1"
-			CharacterSet="2"
+			ConfigurationType="2"
+			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -109,8 +114,10 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;CORE_EXPORTS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
+				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
@@ -125,7 +132,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				LinkIncremental="1"
 				GenerateDebugInformation="true"
+				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				TargetMachine="1"
@@ -157,8 +166,24 @@
 	</References>
 	<Files>
 		<Filter
+			Name="utils"
+			>
+			<File
+				RelativePath=".\utils\ApplicationPath.h"
+				>
+			</File>
+		</Filter>
+		<Filter
 			Name="service"
 			>
+			<File
+				RelativePath=".\service\CptfModel.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\CptfServiceModel.h"
+				>
+			</File>
 			<File
 				RelativePath=".\service\DispatchImpl.h"
 				>
@@ -184,6 +209,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\service\ServiceClassFactory.h"
+				>
+			</File>
+			<File
 				RelativePath=".\service\ServiceCreator.h"
 				>
 			</File>
@@ -198,6 +227,10 @@
 		</Filter>
 		<File
 			RelativePath=".\StdLibInclude.h"
+			>
+		</File>
+		<File
+			RelativePath=".\StringDefine.h"
 			>
 		</File>
 		<File

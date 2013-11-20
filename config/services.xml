@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repository name='service pool' version='1.0.0'>
+ <service>
+    <iid>111</iid>
+	<bundle>222</bundle>
+  </service>
+</repository>

@@ -9,6 +9,8 @@ using boost::shared_ptr;
 using boost::uuids::uuid;
 
 #include <string>
+#include <list>
 
 using std::wstring;
+using std::list;
 #endif
