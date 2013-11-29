@@ -49,8 +49,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../core"
-				PreprocessorDefinitions="WIN32;_WINDOWS;STRICT;_DEBUG"
+				AdditionalIncludeDirectories="../core/;../3rd/"
+				PreprocessorDefinitions="WIN32;_WINDOWS;STRICT;_DEBUG;GLOG_NO_ABBREVIATED_SEVERITIES"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -72,6 +72,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="../3rd/glog/libs/libglog.lib"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
 				SubSystem="2"
