@@ -858,7 +858,7 @@ bool LogFileObject::CreateLogfile(const string& time_pid_string) {
   string string_filename = base_filename_+filename_extension_+
                            time_pid_string;
   const char* filename = string_filename.c_str();
-  int fd = open(filename, O_WRONLY | O_CREAT | O_EXCL, 0664);
+  int fd = open(filename, O_WRONLY | O_CREAT | O_APPEND/*O_EXCL*/, 0664);
   if (fd == -1) return false;
 #ifdef HAVE_FCNTL
   // Mark the file close-on-exec. We don't really care if this fails
@@ -956,7 +956,7 @@ void LogFileObject::Write(bool force_flush,
     const string& time_pid_string = time_pid_stream.str();
 
     if (base_filename_selected_) {
-      if (!CreateLogfile(time_pid_string)) {
+      if (!CreateLogfile(""/*time_pid_string*/)) {//堂堂的glog竟然不能配置输错文件的名字，自己修改下吧
         perror("Could not create log file");
         fprintf(stderr, "COULD NOT CREATE LOGFILE '%s'!\n",
                 time_pid_string.c_str());
