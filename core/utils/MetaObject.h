@@ -25,9 +25,10 @@ namespace core{
 		SetFunc		setFunc_;
 		GetFunc		getFunc_;
 	};
-
+	
 	typedef shared_ptr<MetaDataPrivate>	MetaDataPrivatePtr;
 
+	template<typename T>
 	class MetaObject{
 	public:
 		MetaObject(){}
@@ -38,7 +39,7 @@ namespace core{
 	protected:
 		void		invoke(const wstring& propertyName, SetFunc setFunc, GetFunc getFunc);
 	private:
-		vector<MetaDataPrivatePtr>		metaDatas_;
+		static vector<MetaDataPrivatePtr>		metaDatas_;
 	};
 
 	void	MetaObject::setProperty(const wstring& name
