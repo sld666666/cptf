@@ -6,11 +6,14 @@
 #include <boost/cstdint.hpp>
 #include <boost/function.hpp>
 #include <boost/bind.hpp>
+#include <boost/foreach.hpp>  
 
 using boost::shared_ptr;
 using boost::uuids::uuid;
 using boost::function;
 using boost::bind;
+
+#define foreach BOOST_FOREACH
 
 #include <string>
 #include <list>
@@ -20,4 +23,5 @@ using boost::bind;
 using std::wstring;
 using std::list;
 using std::vector;
+
 #endif

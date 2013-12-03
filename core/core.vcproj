@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="./3rd/"
+				AdditionalIncludeDirectories="./3rd/;../"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;CORE_EXPORTS;GLOG_NO_ABBREVIATED_SEVERITIES"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -174,11 +174,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\utils\IXmlParser.h"
+				>
+			</File>
+			<File
 				RelativePath=".\utils\Log.h"
 				>
 			</File>
 			<File
 				RelativePath=".\utils\MetaObject.h"
+				>
+			</File>
+			<File
+				RelativePath=".\utils\StringUtils.h"
 				>
 			</File>
 		</Filter>

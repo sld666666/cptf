@@ -3,6 +3,8 @@
 #include "IService.h"
 #include "../utils/ApplicationPath.h"
 #include "../StringDefine.h"
+#include "utils/MetaObject.h"
+#include "service/ServiceConfig.h"
 
 namespace cptf{
 namespace core{
@@ -29,6 +31,9 @@ namespace core{
 		wstring curAppPath = ApplicaitonPath::getCurAppPath();
 		wstring serviceXmlPath = curAppPath+ ApplicaitonPath::getDirSeparator()
 								+ SERVICE_XML_NAME;
+
+		ServiceConfig config;
+		config.read(serviceXmlPath);
 		return rtn;
 	}
 }

@@ -1,6 +1,7 @@
 #ifndef CORE_UTILS_METAOBJECT_H
 #define CORE_UTILS_METAOBJECT_H
 #include "StdLibInclude.h"
+#include <boost/assign/list_of.hpp>
 
 namespace cptf{
 namespace core{
@@ -9,13 +10,13 @@ namespace core{
 	typedef function<wstring()> GetFunc;
 	struct MetaDataPrivate{
 		MetaDataPrivate(const wstring& name, SetFunc setFunc, GetFunc getFunc)
-			: name(name)
+			: name_(name)
 			, setFunc_(setFunc)
 			, getFunc_(getFunc){
 
 		}
 
-		static bool	nameEqual(const shared_ptr<MetaDataPrivate> metaData, const wstring* name)
+		static bool	nameEqual(const shared_ptr<MetaDataPrivate> metaData, const wstring& name)
 		{
 			return metaData->name_ == name;
 		}
@@ -42,7 +43,8 @@ namespace core{
 		static vector<MetaDataPrivatePtr>		metaDatas_;
 	};
 
-	void	MetaObject::setProperty(const wstring& name
+	template<typename T>
+	void MetaObject<T>::setProperty(const wstring& name
 						,  const wstring& value)
 	{
 		vector<MetaDataPrivatePtr> iter = std::find_if(metaDatas_.begin(), metaDatas_.end()
@@ -53,7 +55,8 @@ namespace core{
 		}
 	}
 
-	wstring	MetaObject::getProperty(const wstring& name)
+	template<typename T>
+	wstring	MetaObject<T>::getProperty(const wstring& name)
 	{
 		wstring rtnValue;
 		vector<MetaDataPrivatePtr> iter = std::find_if(metaDatas_.begin(), metaDatas_.end()
@@ -64,7 +67,8 @@ namespace core{
 		return rtnValue;
 	}
 
-	void MetaObject::invoke(const wstring& propertyName
+	template<typename T>
+	void MetaObject<T>::invoke(const wstring& propertyName
 							, SetFunc setFunc
 							, GetFunc getFunc)
 	{
