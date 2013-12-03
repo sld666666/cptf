@@ -11,17 +11,17 @@ namespace core{
 		ServiceConfig(){}
 		~ServiceConfig(){}
 
-	public:
-		virtual
+// 	public:
+// 		virtual
 
 	protected:
 		virtual wstring getNodeRelativePath(){return L"repository.service";};
 
 	};
 
-	vector<MetaDataPrivatePtr>::ServiceConfig metaDatas_(boost::assign::list_of
-		(shared_ptr<MetaDataPrivatePtr>(new MetaDataPrivate(propertyName, setFunc, getFunc))
-		)
+// 	vector<MetaDataPrivatePtr>::ServiceConfig metaDatas_(boost::assign::list_of
+// 		(shared_ptr<MetaDataPrivatePtr>(new MetaDataPrivate(propertyName, setFunc, getFunc))
+// 		)
 }
 }
 
