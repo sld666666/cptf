@@ -18,6 +18,7 @@ CAppModule _Module;
 #include "TypeDefine.h"
 #include "service/CptfServiceModel.h"
 #include "utils/Log.h"
+#include <boost/assign/list_of.hpp>
 
 using namespace cptf::core;
 
@@ -28,6 +29,14 @@ interfacecptf IMath : public cptf::core::IDispatch{
 	}
 
 };
+
+class testor{
+	public:
+	static vector<int> aStatic_;
+};
+
+vector<int>  testor::aStatic_(boost::assign::list_of(4)(17)(20));
+
 
 int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 {
@@ -42,7 +51,6 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 		return 0;
 	}
 	CptfServiceModel model;
-	model.init();
 
 	dlgMain.ShowWindow(nCmdShow);
 

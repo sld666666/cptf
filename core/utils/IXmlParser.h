@@ -15,27 +15,35 @@ namespace core{
 		IXmlParser(){};
 		~IXmlParser(){};
 	public:
-		bool	read(const wstring& filePath);
+		list<shared_ptr<T>>	read(const wstring& filePath);
 		bool	write(const wstring& filePath);
 	protected:
 		virtual wstring getNodeRelativePath() = 0;
+		virtual wstring getNodeName() = 0;
 	};
 
 
 	template<class T>
-	bool IXmlParser<T>::read(const wstring& filePath)
+	list<shared_ptr<T>> IXmlParser<T>::read(const wstring& filePath)
 	{
-		bool rtn(false);
+		list<shared_ptr<T>> rtnList;
 
 		wptree tree;
 		string path = StringUtils::wstrToStr(filePath);
 		xml_parser::read_xml(path, tree);
 		foreach(wptree::value_type& val, tree.get_child(getNodeRelativePath())){
-			wstring first = val.first;
-			wstring secode = val.second.data();
-		}
+			shared_ptr<T> obj(new T());
+			wptree child = val.second;
+			wstring path = getNodeRelativePath()+L"."+getNodeName();
+			foreach(wptree::value_type& childval, tree.get_child(path)){
+				wstring first = val.first;
+				wstring secode = val.second.data();
+				obj->setProperty(first, secode);
+			}
+			rtnList.push_back(obj);
+		}
 
-		return rtn;
+		return rtnList;
 	}
 
 	template<class T>

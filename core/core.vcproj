@@ -41,8 +41,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="./3rd/;../"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;CORE_EXPORTS;GLOG_NO_ABBREVIATED_SEVERITIES"
+				AdditionalIncludeDirectories="./3rd/;../;../core/"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;CORE_EXPORTS;GLOG_NO_ABBREVIATED_SEVERITIES;CPTF_CORE_LIB"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -198,6 +198,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\service\CptfServiceModel.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\service\CptfServiceModel.h"
 				>
 			</File>
@@ -231,6 +235,14 @@
 			</File>
 			<File
 				RelativePath=".\service\ServiceConfig.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\ServiceContainer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\service\ServiceContainer.h"
 				>
 			</File>
 			<File

@@ -38,16 +38,16 @@ namespace core{
 		void		setProperty(const wstring& name,  const wstring& value);
 		wstring		getProperty(const wstring& name);
 	protected:
-		void		invoke(const wstring& propertyName, SetFunc setFunc, GetFunc getFunc);
-	private:
-		static vector<MetaDataPrivatePtr>		metaDatas_;
+		void		invoke(const wstring& propertyName,GetFunc getFunc,  SetFunc setFunc);
+	protected:
+		vector<MetaDataPrivatePtr>		metaDatas_;
 	};
 
 	template<typename T>
 	void MetaObject<T>::setProperty(const wstring& name
 						,  const wstring& value)
 	{
-		vector<MetaDataPrivatePtr> iter = std::find_if(metaDatas_.begin(), metaDatas_.end()
+		vector<MetaDataPrivatePtr>::iterator iter = std::find_if(metaDatas_.begin(), metaDatas_.end()
 			, bind(&MetaDataPrivate::nameEqual, _1, name));
 
 		if (iter != metaDatas_.end()){
@@ -69,12 +69,14 @@ namespace core{
 
 	template<typename T>
 	void MetaObject<T>::invoke(const wstring& propertyName
-							, SetFunc setFunc
-							, GetFunc getFunc)
+							, GetFunc getFunc
+							,  SetFunc setFunc)
 	{
-		metaDatas_.push_back(shared_ptr<MetaDataPrivatePtr>(new MetaDataPrivate(
+		metaDatas_.push_back(MetaDataPrivatePtr(new MetaDataPrivate(
 			propertyName, setFunc, getFunc)));
 	}
+
+	#define  INVOKE(name, setFun, getFun) invoke(name, bind(&setFun, this), bind(&getFun, this,_1))
 
 }
 }
