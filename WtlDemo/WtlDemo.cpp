@@ -17,18 +17,40 @@ CAppModule _Module;
 #include "service/IDispatch.h"
 #include "TypeDefine.h"
 #include "service/CptfServiceModel.h"
+#include "service/ServiceCoClass.h"
 #include "utils/Log.h"
 #include <boost/assign/list_of.hpp>
 
+
 using namespace cptf::core;
+
+CptfModule g_cptfModule;
 
 interfacecptf IMath : public cptf::core::IDispatch{
 
-	virtual cptf::IID getIID(){
-		return cptf::GENERATEIID(L"114003cf-505f-11e3-9ce6-00269e1e5da0");
+	virtual cptf::CPTF_IID getIID(){
+		return L"114003cf-505f-11e3-9ce6-00269e1e5da0";
 	}
 
+	virtual bool test() = 0;
+
 };
+
+class MyMath : public ServiceCoClass<MyMath>{
+public:
+	MyMath()
+	{
+		int i (0);
+	}
+	virtual bool test(){
+		int i(0);
+		return true;
+	};
+};
+
+CPTF_OBJECT_ENTRY_AUTO(L"114003cf-505f-11e3-9ce6-00269e1e5da0", MyMath)
+
+
 
 class testor{
 	public:
@@ -40,6 +62,12 @@ vector<int>  testor::aStatic_(boost::assign::list_of(4)(17)(20));
 
 int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 {
+	IMath* math = NULL;
+	g_cptfModule.getClassObject(L"114003cf-505f-11e3-9ce6-00269e1e5da0", (void**)&math);
+	if (math){
+		math->test();
+	}
+
 	CMessageLoop theLoop;
 	_Module.AddMessageLoop(&theLoop);
 

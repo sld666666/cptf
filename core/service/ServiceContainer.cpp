@@ -22,8 +22,7 @@ namespace core{
 		wstring serviceXmlPath = curAppPath+ ApplicaitonPath::getDirSeparator()
 			+ SERVICE_XML_NAME;
 
-		ServiceConfig config;
-		config.read(serviceXmlPath);
+		serviceConfigs_ = ServiceConfig().read(serviceXmlPath);
 		return rtn;
 	}
 }

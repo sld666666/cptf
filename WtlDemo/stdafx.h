@@ -13,8 +13,12 @@
 
 #include <atlbase.h>
 #include <atlapp.h>
+#include "service/CptfModule.h"
+
+using cptf::core::CptfModule;
 
 extern CAppModule _Module;
+extern CptfModule g_cptfModule;
 
 #include <atlwin.h>
 

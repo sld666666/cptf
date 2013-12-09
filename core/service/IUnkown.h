@@ -1,7 +1,7 @@
 #ifndef CORE_SERVICE_IUNKOWN_H
 #define CORE_SERVICE_IUNKOWN_H
 
-#include "../TypeDefine.h"
+#include "TypeDefine.h"
 
 namespace cptf{
 namespace core{

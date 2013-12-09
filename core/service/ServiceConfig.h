@@ -30,11 +30,8 @@ namespace core{
 		wstring bundle_;
 
 	};
-
-// 	vector<MetaDataPrivatePtr> ServiceConfig::metaDatas_(boost::assign::list_of
-// 		(MetaDataPrivatePtr(new MetaDataPrivate(L"iid", bind(&ServiceConfig::iid, this)
-// 		, bind(&ServiceConfig::setIid, this,_1)))
-// 		)
+	
+	typedef shared_ptr<ServiceConfig> ServiceConfigPtr;
 }
 }
 

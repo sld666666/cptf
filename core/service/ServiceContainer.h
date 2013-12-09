@@ -1,7 +1,7 @@
 #ifndef CORE_SERVICE_SERVICECONTAINER_H
 #define CORE_SERVICE_SERVICECONTAINER_H
 
-#include "service/IService.h"
+#include "service/ServiceConfig.h"
 #include "StdLibInclude.h"
 
 namespace cptf{
@@ -17,7 +17,7 @@ namespace core{
 		bool	init();
 
 	private:
-		//list<IService*> services_;
+		list<ServiceConfigPtr> serviceConfigs_;
 	};
 
 	typedef shared_ptr<ServiceContainer> ServiceContainerPtr;

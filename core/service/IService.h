@@ -5,7 +5,7 @@
 namespace cptf{
 namespace core{
 	interfacecptf IService{
-		virtual cptf::IID getIID();
+		virtual cptf::CPTF_IID getIID();
 	};
 }
 }

@@ -12,13 +12,11 @@
 namespace cptf{
 
 	#define interfacecptf struct 
-	typedef shared_ptr<uuid> IID;
+	typedef wstring	CPTF_IID;
 
-	inline  IID GENERATEIID(const std::wstring& str){
-		boost::uuids::string_generator gen;
-		IID rtnIID(new uuid(gen(str)));
-		return rtnIID;
-	} 	
+	typedef	unsigned long	ulong;
+
+	
 }
 
 #endif

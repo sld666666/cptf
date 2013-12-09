@@ -1,22 +1,17 @@
 #ifndef CORE_UTILS_STRINGUTILS_H
 #define CORE_UTILS_STRINGUTILS_H
 #include <string>
+#include "TypeDefine.h"
 using std::string;
 using std::wstring;
 
 namespace cptf{
 namespace core{
 
-	class StringUtils{
+	class CPTF_EXPORT StringUtils{
 	public:
 		static string wstrToStr(const wstring& wstr);
 	};
-
-
-	string StringUtils::wstrToStr(const wstring& wstr)
-	{
-		return std::string(wstr.begin(), wstr.end());
-	}
 }
 }
 

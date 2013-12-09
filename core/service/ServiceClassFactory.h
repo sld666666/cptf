@@ -12,10 +12,10 @@ namespace core{
 		~ServiceClassFactory(){}
 
 	public:
-		bool createInstance(IID iid, IService* service);
+		bool createInstance(CPTF_IID iid, IService* service);
 	};
 
-	bool ServiceClassFactory::createInstance(IID iid, IService* service)
+	bool ServiceClassFactory::createInstance(CPTF_IID iid, IService* service)
 	{
 		bool rtn(false);
 		

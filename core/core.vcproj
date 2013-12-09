@@ -186,6 +186,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\utils\StringUtils.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\utils\StringUtils.h"
 				>
 			</File>
@@ -194,7 +198,23 @@
 			Name="service"
 			>
 			<File
-				RelativePath=".\service\CptfModel.h"
+				RelativePath=".\service\AutoObject.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\CpftBase.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\CptfDllModuleT.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\CptfModule.h"
+				>
+			</File>
+			<File
+				RelativePath=".\service\CptfModuleT.h"
 				>
 			</File>
 			<File
@@ -226,11 +246,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\service\ServiceClass.h"
+				RelativePath=".\service\ServiceClassFactory.h"
 				>
 			</File>
 			<File
-				RelativePath=".\service\ServiceClassFactory.h"
+				RelativePath=".\service\ServiceCoClass.h"
 				>
 			</File>
 			<File
