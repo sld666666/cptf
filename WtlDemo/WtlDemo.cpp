@@ -18,6 +18,7 @@ CAppModule _Module;
 #include "TypeDefine.h"
 #include "service/CptfServiceModel.h"
 #include "service/ServiceCoClass.h"
+#include "service/IDispatchImpl.h"
 #include "utils/Log.h"
 #include <boost/assign/list_of.hpp>
 
@@ -36,7 +37,8 @@ interfacecptf IMath : public cptf::core::IDispatch{
 
 };
 
-class MyMath : public ServiceCoClass<MyMath>{
+class MyMath : public ServiceCoClass<MyMath>
+	, public cptf::core::IDispatchImpl<IMath>{
 public:
 	MyMath()
 	{
