@@ -18,7 +18,7 @@ namespace core{
 
 	public:
 		void	initLibId(const wstring& libId);
-		bool	getClassObject(const CPTF_IID& iid, void** rntObj);
+		bool	getClassObject(const CPTF_IID& csid, const CPTF_IID& iid, void** rntObj);
 	private:
 		wstring		libId_;
 	};
@@ -31,10 +31,11 @@ namespace core{
 	}
 
 	template<typename T>
-	bool CptfModuleT<T>::getClassObject(const CPTF_IID& iid
+	bool CptfModuleT<T>::getClassObject(const CPTF_IID& csid
+										, const CPTF_IID& iid
 										, void** rntObj)
 	{
-		return CptfModuleGetClassObject(this, iid, rntObj); 
+		return CptfModuleGetClassObject(this, csid, iid, rntObj); 
 	}
 }
 }

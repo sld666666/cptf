@@ -23,7 +23,9 @@ namespace core{
 			return ref;
 		}
 
-		void QueryInterface(){}
+		bool queryInterface(const CPTF_IID& iid, void**rntObj){
+			return internalQueryInterface(iid, rntObj);
+		}
 	};
 }
 }

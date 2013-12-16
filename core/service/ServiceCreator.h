@@ -22,7 +22,7 @@ namespace core{
 		T* serviceObj(new T());
 		if (serviceObj){
 			rtn = true;
-			*rtnObj = serviceObj;
+			serviceObj->queryInterface(iid, rtnObj);
 		}
 		return rtn;
 	}	 
