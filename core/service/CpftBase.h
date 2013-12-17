@@ -17,7 +17,7 @@ namespace core{
 
 	struct CPTF_INTMAP_ENTRY
 	{
-		CPTF_IID iid;       // the interface id (IID)
+		cptf::IID iid;       // the interface id (IID)
 		cptf::ulong	address;
 		//_ATL_CREATORARGFUNC* pFunc; //NULL:end, 1:offset, n:ptr
 	};
@@ -27,9 +27,9 @@ namespace core{
 	((cptf::ulong)(static_cast<base*>((derived*)CPTF_PACKING))-CPTF_PACKING)
 
 
-	inline bool CptfModuleGetClassObject(const CptfServiceEntities* cpfgModel
-										, const CPTF_IID& csid
-										, const CPTF_IID& iid
+	inline bool cptfModuleGetClassObject(const CptfServiceEntities* cpfgModel
+										, const cptf::IID& csid
+										, const cptf::IID& iid
 										, void** rtnObj)
 	{
 		bool rtn(false);
@@ -49,7 +49,7 @@ namespace core{
 
 	inline bool cptfInternalQueryInterface(void* pThis
 										, const CPTF_INTMAP_ENTRY* pEntries
-										, const CPTF_IID& iid
+										, const cptf::IID& iid
 										, void** rtnObj)
 	{
 		if(pThis == NULL || pEntries == NULL)
@@ -72,7 +72,7 @@ namespace core{
 
 #define CPTF_BEGIN_SERVICE_MAP(x) public: \
 	typedef x _ComMapClass; \
-	bool internalQueryInterface(const cptf::CPTF_IID& iid, void** ppvObject) \
+	bool internalQueryInterface(const cptf::IID& iid, void** ppvObject) \
  	{ return cptfInternalQueryInterface(this, getEntries(), iid, ppvObject); } \
 	const static CPTF_INTMAP_ENTRY* getEntries(){ \
 	static const CPTF_INTMAP_ENTRY entries[] = {

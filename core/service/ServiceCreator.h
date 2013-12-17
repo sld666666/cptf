@@ -12,11 +12,11 @@ namespace core{
 		virtual ~ServiceCreator(){}
 
 	public:
-		static bool	WINAPI createInstance(CPTF_IID iid, void** rtnObj);
+		static bool	WINAPI createInstance(cptf::IID iid, void** rtnObj);
 	};
 
 	template <typename T>
-	bool ServiceCreator<T>::createInstance(CPTF_IID iid, void** rtnObj)
+	bool ServiceCreator<T>::createInstance(cptf::IID iid, void** rtnObj)
 	{
 		bool rtn(false);
 		T* serviceObj(new T());

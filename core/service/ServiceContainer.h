@@ -7,15 +7,16 @@
 namespace cptf{
 namespace core{
 
-	class  ServiceContainer
+	class CPTF_EXPORT ServiceContainer
 	{
 	public:
 		ServiceContainer(void);
 		~ServiceContainer(void);
+	public:
+		wstring	findBundlelName(const wstring& iid);
 
 	private:
 		bool	init();
-
 	private:
 		list<ServiceConfigPtr> serviceConfigs_;
 	};

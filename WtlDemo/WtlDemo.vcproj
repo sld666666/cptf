@@ -49,7 +49,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../core/;../3rd/"
+				AdditionalIncludeDirectories="../core/;../3rd/;../BundleTestor"
 				PreprocessorDefinitions="WIN32;_WINDOWS;STRICT;_DEBUG;GLOG_NO_ABBREVIATED_SEVERITIES"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -186,6 +186,10 @@
 		<ProjectReference
 			ReferencedProjectIdentifier="{E79B31C7-7535-4EFF-B7AB-E70A74BC4F5A}"
 			RelativePathToProject=".\core\core.vcproj"
+		/>
+		<ProjectReference
+			ReferencedProjectIdentifier="{5FD6185B-D061-48ED-A428-29838DE647AA}"
+			RelativePathToProject=".\BundleTestor\BundleTestor.vcproj"
 		/>
 	</References>
 	<Files>

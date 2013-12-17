@@ -19,7 +19,6 @@ namespace core{
 		bool	write(const wstring& filePath);
 	protected:
 		virtual wstring getNodeRelativePath() = 0;
-		virtual wstring getNodeName() = 0;
 	};
 
 
@@ -34,10 +33,9 @@ namespace core{
 		foreach(wptree::value_type& val, tree.get_child(getNodeRelativePath())){
 			shared_ptr<T> obj(new T());
 			wptree child = val.second;
-			wstring path = getNodeRelativePath()+L"."+getNodeName();
-			foreach(wptree::value_type& childval, tree.get_child(path)){
-				wstring first = val.first;
-				wstring secode = val.second.data();
+			foreach(wptree::value_type& childval, child){
+				wstring first = childval.first;
+				wstring secode = childval.second.data();
 				obj->setProperty(first, secode);
 			}
 			rtnList.push_back(obj);

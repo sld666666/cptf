@@ -11,6 +11,8 @@ namespace core{
 	class CPTF_EXPORT StringUtils{
 	public:
 		static string wstrToStr(const wstring& wstr);
+
+		static vector<wstring> splitLast(const wstring& wstr, const wstring& stuff);
 	};
 }
 }

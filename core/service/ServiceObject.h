@@ -23,7 +23,7 @@ namespace core{
 			return ref;
 		}
 
-		bool queryInterface(const CPTF_IID& iid, void**rntObj){
+		bool queryInterface(const cptf::IID& iid, void**rntObj){
 			return internalQueryInterface(iid, rntObj);
 		}
 	};

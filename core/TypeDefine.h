@@ -10,13 +10,10 @@
 #endif
 
 namespace cptf{
+	#define interfacecptf		struct 
+	typedef wstring				IID;
 
-	#define interfacecptf struct 
-	typedef wstring	CPTF_IID;
-
-	typedef	unsigned long	ulong;
-
-	
+	typedef	unsigned long		ulong;
 }
 
 #endif

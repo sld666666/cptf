@@ -25,6 +25,15 @@ namespace core{
 		serviceConfigs_ = ServiceConfig().read(serviceXmlPath);
 		return rtn;
 	}
+
+	wstring	ServiceContainer::findBundlelName(const wstring& iid)
+	{
+		wstring bundelName;
+		list<ServiceConfigPtr>::iterator iter = find_if(serviceConfigs_.begin()
+			, serviceConfigs_.end(), bind(&ServiceConfigFunctors::matchedById, _1, iid));
+		bundelName = (iter != serviceConfigs_.end())?(*iter)->bundle():L"";
+		return bundelName;
+	}
 }
 }
 

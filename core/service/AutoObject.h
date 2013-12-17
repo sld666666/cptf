@@ -2,11 +2,11 @@
 #define CORE_SERVICE_AUTOOBJECT_H
 #include "TypeDefine.h"
 
-typedef bool (WINAPI CREATORFUNC)(cptf::CPTF_IID, void**);
+typedef bool (WINAPI CREATORFUNC)(cptf::IID, void**);
 
 struct AutoObjectEntry
 {
-	const cptf::CPTF_IID	iid;
+	const cptf::IID	iid;
 	CREATORFUNC* crateFunc;
 
 };

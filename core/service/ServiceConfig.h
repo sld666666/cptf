@@ -5,7 +5,6 @@
 
 namespace cptf{
 namespace core{
-
 	class ServiceConfig : public MetaObject<ServiceConfig>
 		,	public IXmlParser<ServiceConfig>{
 	public:
@@ -23,8 +22,7 @@ namespace core{
 		void setBundle(const wstring& val){bundle_ = val;}
 
 	protected:
-		virtual wstring getNodeRelativePath(){return L"repository.services";};
-		virtual wstring getNodeName(){return L"service";}
+		virtual wstring getNodeRelativePath(){return L"repository.services";}
 	private:
 		wstring iid_;
 		wstring bundle_;
@@ -32,6 +30,19 @@ namespace core{
 	};
 	
 	typedef shared_ptr<ServiceConfig> ServiceConfigPtr;
+
+	class ServiceConfigFunctors
+	{
+	public:
+		static bool	 matchedById(const ServiceConfigPtr config
+			, const wstring& id)
+		{ 
+			bool rtn = (config.get() && id == config->iid());
+			return rtn;
+		}
+
+
+	};
 }
 }
 

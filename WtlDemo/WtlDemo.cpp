@@ -19,6 +19,7 @@ CAppModule _Module;
 #include "service/CptfServiceModel.h"
 #include "service/ServiceCoClass.h"
 #include "service/IDispatchImpl.h"
+#include "BundleTestor.h"
 #include "utils/Log.h"
 #include <boost/assign/list_of.hpp>
 
@@ -27,9 +28,9 @@ using namespace cptf::core;
 
 CptfModule g_cptfModule;
 
-const wstring IMath_IID = L"114003cf-505f-11e3-9ce6-00269e1e5da0";
+const wstring IMath_IID = L"111111";
 interfacecptf IMath : public cptf::core::IDispatch{
-	virtual cptf::CPTF_IID getIID(){
+	virtual cptf::IID getIID(){
 		return IMath_IID;
 	}
 
@@ -37,9 +38,9 @@ interfacecptf IMath : public cptf::core::IDispatch{
 
 };
 
-const wstring IMath1_IID = L"114003cf-505f-11e3-9ce6-00269e1e5da0";
+const wstring IMath1_IID = L"22222";
 interfacecptf IMath1 : public cptf::core::IDispatch{
-	virtual cptf::CPTF_IID getIID(){
+	virtual cptf::IID getIID(){
 		return IMath1_IID;
 	}
 
@@ -65,22 +66,6 @@ public:
 		return true;
 	}
 
-// public: 
-// 	typedef MyMath _ComMapClass; 
-// 	bool internalQueryInterface(const cptf::CPTF_IID& iid, void** ppvObject) 
-// 	{ 
-// 		return cptfInternalQueryInterface(this, getEntries(), iid, ppvObject); 
-// 	}
-// 	const static CPTF_INTMAP_ENTRY* getEntries(){ 
-// 
-// 		static const CPTF_INTMAP_ENTRY entries[] = {
-// 			{IMath_IID, cptf_offsetofclass(IMath, _ComMapClass)},
-// 			{IMath1_IID, cptf_offsetofclass(IMath1, _ComMapClass)},
-// 			{L"", -1}};
-// 		return &entries[0];
-// 		return NULL;
-// 	}
-// 
 	CPTF_BEGIN_SERVICE_MAP(MyMath)
 		CPTF_SERVICE_INTERFACE_ENTRY(IMath_IID, IMath)
 		CPTF_SERVICE_INTERFACE_ENTRY(IMath1_IID, IMath1)
@@ -104,10 +89,28 @@ vector<int>  testor::aStatic_(boost::assign::list_of(4)(17)(20));
 int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 {
 	IMath* math = NULL;
-	g_cptfModule.getClassObject(MyMath_IID, L"114003cf-505f-11e3-9ce6-00269e1e5da0", (void**)&math);
+	g_cptfModule.createInstance(MyMath_IID, IMath_IID, (void**)&math);
 	if (math){
 		math->test();
 	}
+
+	IMath1* math1(NULL);
+	g_cptfModule.createInstance(MyMath_IID, IMath1_IID,(void**)&math1);
+	if(math1){
+		math1->test1();
+	}
+
+	IBundleTestor1* bundleTestor1(NULL);
+	g_cptfModule.createInstance(BundleTestor1_IID, IBundleTestor1_IID,(void**)&bundleTestor1);
+	if(bundleTestor1){
+		bundleTestor1->test();
+	}
+
+	g_cptfModule.createInstance(BundleTestor1_IID, IBundleTestor1_IID,(void**)&bundleTestor1);
+	if(bundleTestor1){
+		bundleTestor1->test();
+	}
+
 
 	CMessageLoop theLoop;
 	_Module.AddMessageLoop(&theLoop);

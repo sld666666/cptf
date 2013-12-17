@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WtlDemo", "WtlDemo\WtlDemo.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core", "core\core.vcproj", "{E79B31C7-7535-4EFF-B7AB-E70A74BC4F5A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BundleTestor", "BundleTestor\BundleTestor.vcproj", "{5FD6185B-D061-48ED-A428-29838DE647AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{E79B31C7-7535-4EFF-B7AB-E70A74BC4F5A}.Debug|Win32.Build.0 = Debug|Win32
 		{E79B31C7-7535-4EFF-B7AB-E70A74BC4F5A}.Release|Win32.ActiveCfg = Release|Win32
 		{E79B31C7-7535-4EFF-B7AB-E70A74BC4F5A}.Release|Win32.Build.0 = Release|Win32
+		{5FD6185B-D061-48ED-A428-29838DE647AA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5FD6185B-D061-48ED-A428-29838DE647AA}.Debug|Win32.Build.0 = Debug|Win32
+		{5FD6185B-D061-48ED-A428-29838DE647AA}.Release|Win32.ActiveCfg = Release|Win32
+		{5FD6185B-D061-48ED-A428-29838DE647AA}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
