@@ -5,7 +5,9 @@
 namespace cptf{
 namespace core{
 	interfacecptf IService{
-		virtual cptf::IID getIID() = 0;
+		virtual	cptf::ulong addRef() = 0;
+		virtual cptf::ulong release() = 0;
+		virtual bool queryInterface(const cptf::IID& iid, void**rntObj) = 0;
 	};
 }
 }

@@ -4,11 +4,11 @@
 
 namespace cptf{
 namespace core{
-	class CSingleThreadModel
+	class SingleThreadModel
 	{
 	public:
-		CSingleThreadModel(){}
-		~CSingleThreadModel();
+		SingleThreadModel(){}
+		~SingleThreadModel();
 
 		static ulong WINAPI increment(ulong* p)  {return ++(*p);}
 		static ulong WINAPI decrement(ulong* p)  {return --(*p);}

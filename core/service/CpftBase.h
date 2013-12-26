@@ -61,7 +61,7 @@ namespace core{
 		{
 			if(iid == pEntries->iid){
 				IService* service = (IService*)((ulong)pThis+pEntries->address);
-				//pUnk->AddRef();
+				service->addRef();
 				*rtnObj = service;
 				return true;
 			}
@@ -79,8 +79,11 @@ namespace core{
 
 #define CPTF_END_SERVICE_MAP() \
 	{L"", 0}};\
-	return &entries[0];\
-	}
+	return &entries[0];}\
+	virtual	cptf::ulong addRef() = 0;\
+	virtual cptf::ulong release() = 0;\
+	virtual bool queryInterface(const cptf::IID& iid, void**rntObj) = 0;
+
 
 #define CPTF_SERVICE_INTERFACE_ENTRY(csid,x)\
 	{csid, cptf_offsetofclass(x, _ComMapClass)},

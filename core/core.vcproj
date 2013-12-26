@@ -238,10 +238,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\service\IUnkown.h"
-				>
-			</File>
-			<File
 				RelativePath=".\service\ObjectRoot.h"
 				>
 			</File>

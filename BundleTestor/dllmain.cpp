@@ -3,6 +3,8 @@
 #include "service/CptfDllModuleT.h"
 #include "service/ServiceCoClass.h"
 #include "service/IDispatchImpl.h"
+#include "service/ThreadModel.h"
+#include "service/ObjectRoot.h"
 #include "dllmain.h"
 #include "BundleTestor.h"
 
@@ -27,9 +29,14 @@ extern "C" __declspec(dllexport) bool dllGetClassObject(cptf::IID csid
 }
 
 class BundleTestor1 : public ServiceCoClass<BundleTestor1>
+	, public ObjectRoot<SingleThreadModel>
 	, public cptf::core::IDispatchImpl<IBundleTestor1>{
 public:
 	BundleTestor1()
+	{
+		int i (0);
+	}
+	~BundleTestor1()
 	{
 		int i (0);
 	}

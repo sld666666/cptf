@@ -8,22 +8,21 @@ namespace core{
 	template <typename Base>
 	class ServiceObject : public Base{
 	public:
-		ulong addRef()
+		virtual ulong addRef()
 		{
 			return internalAddRef();
 		}
-		ulong release()
+
+		virtual ulong release()
 		{
 			ulong ref = internalReleaseRef();
 			if (0 == ref){
 				delete this;
-				this = NULL;
 			}
-
 			return ref;
 		}
 
-		bool queryInterface(const cptf::IID& iid, void**rntObj){
+		virtual bool queryInterface(const cptf::IID& iid, void**rntObj){
 			return internalQueryInterface(iid, rntObj);
 		}
 	};

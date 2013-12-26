@@ -19,6 +19,8 @@ CAppModule _Module;
 #include "service/CptfServiceModel.h"
 #include "service/ServiceCoClass.h"
 #include "service/IDispatchImpl.h"
+#include "service/ThreadModel.h"
+#include "service/ObjectRoot.h"
 #include "BundleTestor.h"
 #include "utils/Log.h"
 #include <boost/assign/list_of.hpp>
@@ -30,19 +32,15 @@ CptfModule g_cptfModule;
 
 const wstring IMath_IID = L"111111";
 interfacecptf IMath : public cptf::core::IDispatch{
-	virtual cptf::IID getIID(){
-		return IMath_IID;
-	}
+
 
 	virtual bool test() = 0;
+	virtual bool test1() = 0;
 
 };
 
 const wstring IMath1_IID = L"22222";
 interfacecptf IMath1 : public cptf::core::IDispatch{
-	virtual cptf::IID getIID(){
-		return IMath1_IID;
-	}
 
 	virtual bool test1() = 0;
 
@@ -50,9 +48,15 @@ interfacecptf IMath1 : public cptf::core::IDispatch{
 
 class MyMath : public ServiceCoClass<MyMath>
 	, public cptf::core::IDispatchImpl<IMath>
+	, public ObjectRoot<SingleThreadModel>
 	, public IMath1{
 public:
 	MyMath()
+	{
+		int i (0);
+	}
+
+	~MyMath()
 	{
 		int i (0);
 	}
@@ -92,6 +96,8 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 	g_cptfModule.createInstance(MyMath_IID, IMath_IID, (void**)&math);
 	if (math){
 		math->test();
+		math->test1();
+		math->release();
 	}
 
 	IMath1* math1(NULL);
@@ -104,6 +110,7 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 	g_cptfModule.createInstance(BundleTestor1_IID, IBundleTestor1_IID,(void**)&bundleTestor1);
 	if(bundleTestor1){
 		bundleTestor1->test();
+		bundleTestor1->release();
 	}
 
 	g_cptfModule.createInstance(BundleTestor1_IID, IBundleTestor1_IID,(void**)&bundleTestor1);
