@@ -7,6 +7,16 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core", "core\core.vcproj", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BundleTestor", "BundleTestor\BundleTestor.vcproj", "{5FD6185B-D061-48ED-A428-29838DE647AA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{57150BBD-B182-44AF-ABA2-17AD00BCB836}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{54943E73-4A4E-46BA-9BD2-D74679902BA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{770AE074-2DFE-45F7-B839-2BC25A4E5B0F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppWindow", "ui\AppWindow\AppWindow.vcproj", "{7B0292A6-DABB-4A37-8B3F-407F38FF9DD0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppDemo", "demo\AppDemo\AppDemo.vcproj", "{18034638-D53B-4CFA-AAD4-9AB6AB66163B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -25,8 +35,21 @@ Global
 		{5FD6185B-D061-48ED-A428-29838DE647AA}.Debug|Win32.Build.0 = Debug|Win32
 		{5FD6185B-D061-48ED-A428-29838DE647AA}.Release|Win32.ActiveCfg = Release|Win32
 		{5FD6185B-D061-48ED-A428-29838DE647AA}.Release|Win32.Build.0 = Release|Win32
+		{7B0292A6-DABB-4A37-8B3F-407F38FF9DD0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7B0292A6-DABB-4A37-8B3F-407F38FF9DD0}.Debug|Win32.Build.0 = Debug|Win32
+		{7B0292A6-DABB-4A37-8B3F-407F38FF9DD0}.Release|Win32.ActiveCfg = Release|Win32
+		{7B0292A6-DABB-4A37-8B3F-407F38FF9DD0}.Release|Win32.Build.0 = Release|Win32
+		{18034638-D53B-4CFA-AAD4-9AB6AB66163B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{18034638-D53B-4CFA-AAD4-9AB6AB66163B}.Debug|Win32.Build.0 = Debug|Win32
+		{18034638-D53B-4CFA-AAD4-9AB6AB66163B}.Release|Win32.ActiveCfg = Release|Win32
+		{18034638-D53B-4CFA-AAD4-9AB6AB66163B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F136CFBB-BDC7-4A5A-BA31-33F0793A52A9} = {54943E73-4A4E-46BA-9BD2-D74679902BA4}
+		{18034638-D53B-4CFA-AAD4-9AB6AB66163B} = {54943E73-4A4E-46BA-9BD2-D74679902BA4}
+		{7B0292A6-DABB-4A37-8B3F-407F38FF9DD0} = {770AE074-2DFE-45F7-B839-2BC25A4E5B0F}
 	EndGlobalSection
 EndGlobal

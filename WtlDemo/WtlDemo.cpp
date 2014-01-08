@@ -89,8 +89,7 @@ class testor{
 
 vector<int>  testor::aStatic_(boost::assign::list_of(4)(17)(20));
 
-
-int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
+void test()
 {
 	IMath* math = NULL;
 	g_cptfModule.createInstance(MyMath_IID, IMath_IID, (void**)&math);
@@ -118,7 +117,12 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 		bundleTestor1->test();
 	}
 
+}
 
+int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
+{
+	
+	test();
 	CMessageLoop theLoop;
 	_Module.AddMessageLoop(&theLoop);
 
