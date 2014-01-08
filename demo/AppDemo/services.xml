@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repository name='service pool' version='1.0.0'>
+<services>
+ <service>
+    <iid>114003cf-505f-11e3-9ce6-00269e3e5da0</iid>
+	<bundle>MainApp</bundle>
+ </service>
+  <service>
+    <iid>114003cf-505f-11e3-9ce6-222222222222</iid>
+	<bundle>E:\project\github\cptf\Debug\BundleTestor.dll</bundle>
+ </service>
+ <service>
+    <iid>2ff2ff21-7775-11e3-b50d-bc305bacf447</iid>
+	<bundle>E:\project\github\cptf\Debug\AppWindow.lib</bundle>
+ </service>
+</services>
+</repository>

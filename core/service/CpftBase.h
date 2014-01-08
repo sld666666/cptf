@@ -41,6 +41,7 @@ namespace core{
 			if (obj == NULL) continue;
 			if (obj->crateFunc != NULL && csid == obj->iid){
 				rtn  = obj->crateFunc(iid, rtnObj);
+				break;
 			}
 		}
 

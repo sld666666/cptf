@@ -16,6 +16,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppWindow", "ui\AppWindow\AppWindow.vcproj", "{7B0292A6-DABB-4A37-8B3F-407F38FF9DD0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppDemo", "demo\AppDemo\AppDemo.vcproj", "{18034638-D53B-4CFA-AAD4-9AB6AB66163B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7B0292A6-DABB-4A37-8B3F-407F38FF9DD0} = {7B0292A6-DABB-4A37-8B3F-407F38FF9DD0}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

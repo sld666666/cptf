@@ -26,6 +26,8 @@ extern "C"
 #pragma comment(linker, "/merge:CPTF=.rdata")
 #endif
 
+__pragma(comment(linker, "/include:_g_objEntryFirst"))  
+
 #if defined(_M_IX86)
 #define CPTF_OBJECT_ENTRY_PRAGMA(class) __pragma(comment(linker, "/include:___pobjMap_" #class));
 #elif defined(_M_IA64)
