@@ -92,3 +92,13 @@
 [0108/192358:INFO:CONSOLE(292)] "Uncaught ReferenceError: loadBlogDefaultCalendar is not defined", source: file:///E:/112233.htm (292)
 [0108/192358:INFO:CONSOLE(403)] "Uncaught ReferenceError: loadBlogSideColumn is not defined", source: file:///E:/112233.htm (403)
 [0108/192623:ERROR:content_client.cc(101)] No data resource available for id 4746
+[0109/102133:INFO:CONSOLE(126)] "Uncaught ReferenceError: loadViewCount is not defined", source: file:///E:/112233.htm (126)
+[0109/102133:INFO:CONSOLE(205)] "Uncaught ReferenceError: blogCommentManager is not defined", source: file:///E:/112233.htm (205)
+[0109/102133:ERROR:content_client.cc(101)] No data resource available for id 4700
+[0109/102133:INFO:CONSOLE(261)] "Uncaught ReferenceError: fixPostBodyFormat is not defined", source: file:///E:/112233.htm (261)
+[0109/102133:INFO:CONSOLE(266)] "Uncaught ReferenceError: loadBlogSignature is not defined", source: file:///E:/112233.htm (266)
+[0109/102133:INFO:CONSOLE(272)] "Uncaught ReferenceError: $ is not defined", source: file:///E:/112233.htm (272)
+[0109/102133:INFO:CONSOLE(285)] "Uncaught ReferenceError: loadBlogNews is not defined", source: file:///E:/112233.htm (285)
+[0109/102133:INFO:CONSOLE(292)] "Uncaught ReferenceError: loadBlogDefaultCalendar is not defined", source: file:///E:/112233.htm (292)
+[0109/102133:INFO:CONSOLE(403)] "Uncaught ReferenceError: loadBlogSideColumn is not defined", source: file:///E:/112233.htm (403)
+[0109/102435:ERROR:content_client.cc(101)] No data resource available for id 4746

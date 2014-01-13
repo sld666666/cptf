@@ -39,6 +39,6 @@ void CefProcess::createBrowser(HWND hWnd
 	GetClientRect(hWnd, &rect);
 	info.SetAsChild(hWnd, rect);
 	CefBrowserHost::CreateBrowser(info, client
-		, "file:///E:/112233.htm", settings); 
+		, "file:///E:/cptftestor/test.html", settings); 
 }
 
