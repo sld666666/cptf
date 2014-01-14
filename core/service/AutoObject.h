@@ -2,7 +2,7 @@
 #define CORE_SERVICE_AUTOOBJECT_H
 #include "TypeDefine.h"
 
-typedef bool (WINAPI CREATORFUNC)(cptf::IID, void**);
+typedef bool (__stdcall CREATORFUNC)(cptf::IID, void**);
 
 struct AutoObjectEntry
 {
@@ -38,8 +38,8 @@ __pragma(comment(linker, "/include:_g_objEntryFirst"))
 #error Unknown Platform. define CPTF_OBJECT_ENTRY_PRAGMA
 #endif
 
-#define CPTF_OBJECT_ENTRY_AUTO(clsid, class) \
-	__declspec(selectany) AutoObjectEntry __objMap_##class = {clsid, class::creatorClass_::createInstance}; \
+#define CPTF_OBJECT_ENTRY_AUTO(class) \
+	__declspec(selectany) AutoObjectEntry __objMap_##class = {class::clsid(), class::creatorClass_::createInstance}; \
 	extern "C" __declspec(allocate("CPTF$__m")) __declspec(selectany) AutoObjectEntry* const __pobjMap_##class = &__objMap_##class; \
 	CPTF_OBJECT_ENTRY_PRAGMA(class)
 

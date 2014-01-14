@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repository name='service pool' version='1.0.0'>
+<bundles>
+<bundle>
+	<name>Role.dll</name>
+	<description> roles </description>
+	<iid>7f201611-7c1a-11e3-a2d2-bc305bacf447</iid>
+</bundle>
+</bundles>
+</repository>

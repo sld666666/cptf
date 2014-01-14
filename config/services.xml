@@ -1,7 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <repository name='service pool' version='1.0.0'>
- <service>
-    <iid>111</iid>
-	<bundle>222</bundle>
-  </service>
+<services>
+	<service>
+		<bundle>Role.dll</bundle>
+		<csid>500851c0-7c2a-11e3-8c28-bc305bacf447</csid>
+		<description>hero</description>
+		<type>hero</type>
+		<name>Hero</name>
+	</service>
+</services>
 </repository>

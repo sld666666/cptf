@@ -40,6 +40,8 @@ public:
 	{
 		int i (0);
 	}
+
+	static wstring	 clsid() {return BundleTestor1_IID;}
 	virtual bool test(){
 		int i(0);
 		return true;
@@ -53,4 +55,4 @@ public:
 
 
 
-CPTF_OBJECT_ENTRY_AUTO(BundleTestor1_IID, BundleTestor1)
+CPTF_OBJECT_ENTRY_AUTO(BundleTestor1)

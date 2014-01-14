@@ -20,6 +20,7 @@ namespace core{
 		{
 			return ThreadModel::decrement(&ref_);
 		}
+
 	private:
 		ulong ref_;
 	};

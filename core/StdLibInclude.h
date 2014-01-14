@@ -18,10 +18,12 @@ using boost::bind;
 #include <string>
 #include <list>
 #include <vector>
+#include <map>
 #include <algorithm>
 
 using std::wstring;
 using std::list;
 using std::vector;
+using std::map;
 
 #endif

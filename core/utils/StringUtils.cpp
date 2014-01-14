@@ -17,6 +17,7 @@ namespace core{
 			strList.push_back(wstr.substr(pos+1, wstr.length()));
 
 		}
+		strList.push_back(wstr);
 		return strList;
 	}
 }

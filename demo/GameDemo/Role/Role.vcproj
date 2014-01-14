@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="core"
-	ProjectGUID="{E79B31C7-7535-4EFF-B7AB-E70A74BC4F5A}"
-	RootNamespace="core"
+	Name="Role"
+	ProjectGUID="{6560921E-D0E4-4140-81E6-8A6628B3A9C7}"
+	RootNamespace="Role"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -18,8 +18,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)\Debug"
-			IntermediateDirectory="$(SolutionDir)\Debug"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
 			CharacterSet="1"
 			>
@@ -41,12 +41,12 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="./3rd/;../;../core/"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;CORE_EXPORTS;GLOG_NO_ABBREVIATED_SEVERITIES;CPTF_CORE_LIB"
+				AdditionalIncludeDirectories="../../../core;"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;ROLE_EXPORTS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
-				UsePrecompiledHeader="0"
+				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="4"
 			/>
@@ -115,10 +115,10 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;CORE_EXPORTS"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;ROLE_EXPORTS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
-				UsePrecompiledHeader="0"
+				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
@@ -167,155 +167,103 @@
 	</References>
 	<Files>
 		<Filter
-			Name="utils"
+			Name="源文件"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\utils\ApplicationPath.cpp"
+				RelativePath=".\dllmain.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						CompileAsManaged="0"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						CompileAsManaged="0"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\Role.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\utils\ApplicationPath.h"
+				RelativePath=".\stdafx.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="头文件"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
+			<File
+				RelativePath=".\dllmain.h"
 				>
 			</File>
 			<File
-				RelativePath=".\utils\CastsUtils.h"
+				RelativePath=".\Dumesa.h"
 				>
 			</File>
 			<File
-				RelativePath=".\utils\IXmlParser.h"
+				RelativePath=".\Hero.h"
 				>
 			</File>
 			<File
-				RelativePath=".\utils\Log.h"
+				RelativePath=".\Role.h"
 				>
 			</File>
 			<File
-				RelativePath=".\utils\MetaObject.h"
+				RelativePath=".\stdafx.h"
 				>
 			</File>
 			<File
-				RelativePath=".\utils\StringUtils.cpp"
+				RelativePath=".\targetver.h"
 				>
 			</File>
 			<File
-				RelativePath=".\utils\StringUtils.h"
+				RelativePath=".\Tiger.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Wolf.h"
 				>
 			</File>
 		</Filter>
 		<Filter
-			Name="service"
+			Name="资源文件"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
-			<File
-				RelativePath=".\service\AutoObject.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\BundleConfig.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\BundleContainer.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\CpftBase.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\CptfDllModuleT.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\CptfModule.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\CptfModuleT.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\IDispatch.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\IDispatchImpl.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\IService.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ObjectRoot.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ServiceClassFactory.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ServiceCoClass.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ServiceConfig.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ServiceConfigs.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ServiceConfigs.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ServiceContainer.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ServiceCreator.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ServiceObject.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ServicesCache.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ServicesCache.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\SystemOperation.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ThreadModel.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\WinDllCreator.h"
-				>
-			</File>
 		</Filter>
 		<File
-			RelativePath=".\utils\mian.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\StdLibInclude.h"
-			>
-		</File>
-		<File
-			RelativePath=".\StringDefine.h"
-			>
-		</File>
-		<File
-			RelativePath=".\TypeDefine.h"
+			RelativePath=".\ReadMe.txt"
 			>
 		</File>
 	</Files>
