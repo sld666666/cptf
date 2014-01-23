@@ -39,6 +39,6 @@ void CefProcess::createBrowser(HWND hWnd
 	GetClientRect(hWnd, &rect);
 	info.SetAsChild(hWnd, rect);
 	CefBrowserHost::CreateBrowser(info, client
-		, "file:///E:/cptftestor/test.html", settings); 
+		, "file:///AlloyTimer-master/index.html", settings); 
 }
 

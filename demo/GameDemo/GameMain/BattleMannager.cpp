@@ -28,7 +28,6 @@ void BattleMannager::run()
 	services = serviceContainer_.getServices(IHumanOgre_IID);
 	list<IHumanOgre*> hummanOgres = CastUtils::parentsToChildren<IService, IHumanOgre>(services);
 	for_each(hummanOgres.begin(), hummanOgres.end(), bind(&BattleMannager::printHumanOgre, _1));
-	services = serviceContainer_.getServices(IOgre_IID);
 }
 
 void BattleMannager::printHero(IHero* hero)
