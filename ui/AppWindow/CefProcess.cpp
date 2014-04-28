@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "CefProcess.h"
+#include "utils/ApplicationPath.h"
 
 
 CefProcess::CefProcess(void)
@@ -38,7 +39,14 @@ void CefProcess::createBrowser(HWND hWnd
 	RECT rect;
 	GetClientRect(hWnd, &rect);
 	info.SetAsChild(hWnd, rect);
+	wstring resource = cptf::core::ApplicaitonPath<>::getCurAppPath();
+	wstring indexPath = L"file:///" 
+		+ resource 
+		+ cptf::core::ApplicaitonPath<>::getDirSeparator()
+		+ L"resource"
+		+ cptf::core::ApplicaitonPath<>::getDirSeparator()
+		+ L"index.html";
 	CefBrowserHost::CreateBrowser(info, client
-		, "file:///AlloyTimer-master/index.html", settings); 
+		, indexPath, settings); 
 }
 

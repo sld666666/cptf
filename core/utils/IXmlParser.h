@@ -28,7 +28,7 @@ namespace core{
 		list<shared_ptr<T>> rtnList;
 
 		wptree tree;
-		string path = StringUtils::wstrToStr(filePath);
+		string path = StringUtils<>::wstrToStr(filePath);
 		xml_parser::read_xml(path, tree);
 		foreach(wptree::value_type& val, tree.get_child(getNodeRelativePath())){
 			shared_ptr<T> obj(new T());

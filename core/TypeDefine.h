@@ -3,11 +3,11 @@
 #pragma warning(disable:4251) 
 #include "StdLibInclude.h"
 
-#ifdef CPTF_CORE_LIB
-# define CPTF_EXPORT _declspec(dllexport)
-#else
-# define CPTF_EXPORT _declspec(dllimport)
-#endif
+// #ifdef CPTF_CORE_LIB
+// # define CPTF_EXPORT _declspec(dllexport)
+// #else
+// # define CPTF_EXPORT _declspec(dllimport)
+// #endif
 
 namespace cptf{
 	#define interfacecptf		struct 

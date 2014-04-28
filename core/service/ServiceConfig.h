@@ -34,7 +34,7 @@ namespace core{
 		wstring	serviceId(){return serviceId_;}
 		void	setServiceId(const wstring& val){
 			serviceId_ = val;
-			serviceIds_ = StringUtils::splitLast(serviceId_, L";");
+			serviceIds_ = StringUtils<>::splitLast(serviceId_, L";");
 		}
 
 		wstring	serviceName(){return serviceName_;}

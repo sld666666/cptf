@@ -143,10 +143,6 @@
 		</Configuration>
 	</Configurations>
 	<References>
-		<ProjectReference
-			ReferencedProjectIdentifier="{E79B31C7-7535-4EFF-B7AB-E70A74BC4F5A}"
-			RelativePathToProject=".\core\core.vcproj"
-		/>
 	</References>
 	<Files>
 		<Filter

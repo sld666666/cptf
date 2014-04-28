@@ -45,7 +45,7 @@
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;CORE_EXPORTS;GLOG_NO_ABBREVIATED_SEVERITIES;CPTF_CORE_LIB"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="3"
+				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="4"
@@ -171,10 +171,6 @@
 			Name="utils"
 			>
 			<File
-				RelativePath=".\utils\ApplicationPath.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\utils\ApplicationPath.h"
 				>
 			</File>
@@ -195,7 +191,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\utils\StringUtils.cpp"
+				RelativePath=".\utils\OS.h"
 				>
 			</File>
 			<File
@@ -263,10 +259,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\service\ServiceConfigs.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\service\ServiceConfigs.h"
 				>
 			</File>
@@ -280,10 +272,6 @@
 			</File>
 			<File
 				RelativePath=".\service\ServiceObject.h"
-				>
-			</File>
-			<File
-				RelativePath=".\service\ServicesCache.cpp"
 				>
 			</File>
 			<File

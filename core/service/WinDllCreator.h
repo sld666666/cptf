@@ -25,7 +25,7 @@ namespace core{
 										, void** rntObj)
 		{
 			DLLPROC* pFunc = NULL;
-			vector<wstring> splits = StringUtils::splitLast(bundleName, L"/");
+			vector<wstring> splits = StringUtils<>::splitLast(bundleName, L"/");
 			if (splits.size()<2)return false;
 
 			wstring path = splits[0];

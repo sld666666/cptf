@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="$(OutDir)\libcef_dll_wrapper.lib $(OutDir)\libcef.lib"
+				AdditionalDependencies="$(OutDir)\libcef_dll_wrapper.lib $(OutDir)\libcef.lib $(OutDir)\libboost_filesystem-vc90-mt-gd-1_43.lib"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
 				SubSystem="2"
