@@ -19,3 +19,15 @@ void MainWindowClient::OnAfterCreated(CefRefPtr<CefBrowser> browser)
 	browser_ = browser;
 }
 
+
+bool MainWindowClient::OnProcessMessageReceived(CefRefPtr<CefBrowser> browser,
+											 CefProcessId source_process,
+											 CefRefPtr<CefProcessMessage> message)
+{
+	bool rtn(false);
+	processMessageDelegate_.OnProcessMessageReceived(
+		  browser
+		, source_process
+		, message);
+	return rtn;
+}

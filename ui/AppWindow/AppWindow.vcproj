@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../core/;../../3rd/;../../3rd/cef"
+				AdditionalIncludeDirectories="../../core/;../../3rd/;../../3rd/cef/"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;APPWINDOW_EXPORTS"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
@@ -105,7 +105,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="../../core/;../../3rd/;../../3rd/cef"
+				AdditionalIncludeDirectories="../../core/;../../3rd/;../../3rd/cef/"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;APPWINDOW_EXPORTS"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -159,6 +159,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ClientApp.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ClientV8Handler.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\dllmain.cpp"
 				>
 				<FileConfiguration
@@ -182,6 +190,14 @@
 			</File>
 			<File
 				RelativePath=".\MainWindowClient.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ProcessMessageDelegate.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RunFileDialogCallback.cpp"
 				>
 			</File>
 			<File
@@ -223,6 +239,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ClientApp.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ClientV8Handler.h"
+				>
+			</File>
+			<File
 				RelativePath=".\dllmain.h"
 				>
 			</File>
@@ -235,7 +259,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ProcessMessageDelegate.h"
+				>
+			</File>
+			<File
 				RelativePath=".\resource.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RunFileDialogCallback.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SetList.h"
 				>
 			</File>
 			<File
@@ -254,6 +290,222 @@
 				RelativePath=".\WinWidgetProcess.h"
 				>
 			</File>
+			<Filter
+				Name="cef"
+				>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_app.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_base.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_browser.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_browser_process_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_callback.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_client.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_command_line.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_context_menu_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_cookie.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_dialog_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_display_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_dom.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_download_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_download_item.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_drag_data.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_drag_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_focus_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_frame.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_geolocation.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_geolocation_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_jsdialog_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_keyboard_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_life_span_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_load_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_menu_model.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_origin_whitelist.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_pack_resources.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_pack_strings.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_path_util.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_process_message.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_process_util.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_render_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_render_process_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_request.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_request_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_resource_bundle_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_resource_handler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_response.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_runnable.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_scheme.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_stream.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_string_visitor.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_task.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_trace.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_trace_event.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_url.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_urlrequest.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_v8.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_values.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_version.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_web_plugin.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_xml_reader.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\3rd\cef\include\cef_zip_reader.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="资源文件"

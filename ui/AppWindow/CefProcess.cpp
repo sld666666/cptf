@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "CefProcess.h"
+#include "ClientApp.h"
 #include "utils/ApplicationPath.h"
 
 
@@ -14,12 +15,13 @@ CefProcess::~CefProcess(void)
 void CefProcess::intiCef()
 {
 	CefMainArgs main_args(NULL);
-	int exit_code = CefExecuteProcess(main_args, NULL);
+	CefRefPtr<ClientApp> app(new ClientApp);
+	int exit_code = CefExecuteProcess(main_args, app.get());
 	if (exit_code >= 0) {
 		return ;
 	}
 	CefSettings settings;
-	CefInitialize(main_args, settings, NULL);
+	CefInitialize(main_args, settings, app.get());
 }
 
 int CefProcess::run()
@@ -45,7 +47,7 @@ void CefProcess::createBrowser(HWND hWnd
 		+ cptf::core::ApplicaitonPath<>::getDirSeparator()
 		+ L"resource"
 		+ cptf::core::ApplicaitonPath<>::getDirSeparator()
-		+ L"index.html";
+		+ L"binding.html";
 	CefBrowserHost::CreateBrowser(info, client
 		, indexPath, settings); 
 }

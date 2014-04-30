@@ -102,3 +102,4 @@
 [0109/102133:INFO:CONSOLE(292)] "Uncaught ReferenceError: loadBlogDefaultCalendar is not defined", source: file:///E:/112233.htm (292)
 [0109/102133:INFO:CONSOLE(403)] "Uncaught ReferenceError: loadBlogSideColumn is not defined", source: file:///E:/112233.htm (403)
 [0109/102435:ERROR:content_client.cc(101)] No data resource available for id 4746
+[0429/131416:FATAL:url_request_context.cc(109)] Check failed: false. Leaked 1 URLRequest(s). First URL: http://wpad/wpad.dat.
