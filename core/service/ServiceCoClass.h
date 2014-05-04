@@ -11,6 +11,8 @@ namespace core{
 	public:
 		ServiceCoClass(){}
 		~ServiceCoClass(){}
+
+		static wstring	 clsid() {return T::clsid();}
 	public:
 		typedef  ServiceCreator< ServiceObject<T>> creatorClass_;
 	};

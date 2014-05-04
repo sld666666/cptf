@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../core/;../../ui/AppWindow"
+				AdditionalIncludeDirectories="../../core/;../../3rd/;../../3rd/cef/;../../ui/AppWindow/"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -177,6 +177,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\BindJsProcessMsgDelegate.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\DailogProcessMsgDelegate.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.cpp"
 				>
 				<FileConfiguration
@@ -204,6 +212,14 @@
 			>
 			<File
 				RelativePath=".\AppDemo.h"
+				>
+			</File>
+			<File
+				RelativePath=".\BindJsProcessMsgDelegate.h"
+				>
+			</File>
+			<File
+				RelativePath=".\DailogProcessMsgDelegate.h"
 				>
 			</File>
 			<File

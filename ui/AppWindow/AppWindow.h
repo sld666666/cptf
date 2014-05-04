@@ -1,14 +1,13 @@
 #ifndef CPTF_UI_APPWINDOW
 #define CPTF_UI_APPWINDOW
 
-#include "service/CptfDllModuleT.h"
-#include "service/ServiceCoClass.h"
-#include "service/IDispatchImpl.h"
-#include "service/ThreadModel.h"
-#include "service/ObjectRoot.h"
+#include "service/CptfModule.h"
+
 #include "TypeDefine.h"
 #include "dllmain.h"
 #include "IAppWindow.h"
+
+extern cptf::core::CptfModule g_cptfModule;
 
 class AppWindow : public IAppWindow{
 public:

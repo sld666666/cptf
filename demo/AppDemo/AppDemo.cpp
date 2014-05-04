@@ -5,9 +5,9 @@
 #include "AppDemo.h"
 #include "IAppWindow.h"
 #include "AppWindow.h"
-#include "service/CptfModule.h"
 
-CptfModule g_cptfModule;
+
+cptf::core::CptfModule g_cptfModule;
 
 int APIENTRY _tWinMain(HINSTANCE hInstance,
                      HINSTANCE hPrevInstance,

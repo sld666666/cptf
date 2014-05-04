@@ -7,11 +7,15 @@
 #include <boost/function.hpp>
 #include <boost/bind.hpp>
 #include <boost/foreach.hpp>  
+#include <boost/lambda/lambda.hpp>
+#include <boost/lambda/bind.hpp>
+#include <boost/lambda/if.hpp>
 
 using boost::shared_ptr;
 using boost::uuids::uuid;
 using boost::function;
 using boost::bind;
+namespace bl =  boost::lambda;
 
 #define foreach BOOST_FOREACH
 
@@ -22,6 +26,7 @@ using boost::bind;
 #include <algorithm>
 
 using std::wstring;
+using std::string;
 using std::list;
 using std::vector;
 using std::map;

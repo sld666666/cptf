@@ -56,12 +56,13 @@ namespace core{
 		if (!creator_)return rtn;
 
 		wstring bundleName = serviceConfigs_.findBundlelName(csid);
-		bundleName = ApplicaitonPath::getCurAppPath() + ApplicaitonPath::getDirSeparator()
-			+ bundleName;
-		if (!bundleName.empty()){
-			if (MAINAPP == bundleName){
-				rtn = creator_->appClassObject(csid, iid, rntObj);
-			}else{
+		if (MAINAPP == bundleName){
+			rtn = creator_->appClassObject(csid, iid, rntObj);
+		}else{
+			if (!bundleName.empty()){
+				bundleName = ApplicaitonPath<>::getCurAppPath() + ApplicaitonPath<>::getDirSeparator()
+					+ bundleName;
+
 				rtn = creator_->bundleCreateInstance(bundleName, csid, iid, rntObj);
 			}
 		}

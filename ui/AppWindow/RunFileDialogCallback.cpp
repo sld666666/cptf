@@ -13,7 +13,7 @@ void RunFileDialogCallback::OnFileDialogDismissed( CefRefPtr<CefBrowserHost> bro
 												 const std::vector<CefString>& file_paths)
 {
 	CefRefPtr<CefProcessMessage> message =
-		CefProcessMessage::Create("binding_test");
+		CefProcessMessage::Create("DialogTest");
 	CefRefPtr<CefListValue> args = message->GetArgumentList();
 	CefRefPtr<CefListValue> val = CefListValue::Create();
 	for (int i = 0; i < static_cast<int>(file_paths.size()); ++i)
