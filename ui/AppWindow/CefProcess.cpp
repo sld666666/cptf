@@ -47,7 +47,7 @@ void CefProcess::createBrowser(HWND hWnd
 		+ cptf::core::ApplicaitonPath<>::getDirSeparator()
 		+ L"resource"
 		+ cptf::core::ApplicaitonPath<>::getDirSeparator()
-		+ L"binding.html";
+		+ L"index.html";
 	CefBrowserHost::CreateBrowser(info, client
 		, indexPath, settings); 
 }

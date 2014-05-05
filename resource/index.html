@@ -3,15 +3,15 @@
 		<title> code Editor</title>
 		
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script type="text/javascript"src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/editor.js"></script>
 	</head>
 	
 	<body>
 		<div class = "buttons">
 			<button id = "new"> New</button>
-			<button id = "open"> Open</button>
+			<button id = "open" onclick="onOpenButon();"> Open</button>
 			<button id = "save"> Save</button>
+			<input type="text" id="result" value="12">
 		</div>
 		<div id = "editor"></div>
 		<div class = "info">

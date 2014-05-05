@@ -1,9 +1,13 @@
 
+var MesageName = 'editor';
+
+/*
 $(document).ready(function(){
    onload();
 });
 
 function onload(){
+	init();
 	newBtn = document.getElementById("new");
 	openBtn = document.getElementById("open");
 	saveBtn = document.getElementById("save");
@@ -13,9 +17,9 @@ function onload(){
 	saveBtn.addEventListener("click", onSaveButon);
 };
 
-function initContextMenu(){
-
-}
+function init(){
+	
+}*/
 
 function onNewButon(){
 	var x = window.screenX + 10;
@@ -25,6 +29,14 @@ function onNewButon(){
 
 function onOpenButon(){
 	alert("onOpenButon");
+	var message = MesageName+'.'+"FileOpen";
+	app.setMessageCallback(message, function(name, args){
+		document.getElementById("result").value = args[0];
+		app.removeMessageCallback(message);
+	})
+	
+	app.sendMessage(message);
+	
 }
 
 function onSaveButon(){

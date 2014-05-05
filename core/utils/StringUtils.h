@@ -12,9 +12,7 @@ namespace core{
 	class StringUtils{
 	public:
 		static string wstrToStr(const wstring& wstr);
-
 		static wstring strToWstr(const string& str);
-
 		static vector<wstring> splitLast(const wstring& wstr, const wstring& stuff);
 	};
 
@@ -44,6 +42,23 @@ namespace core{
 		strList.push_back(wstr);
 		return strList;
 	}
+
+	template<>
+	class StringUtils<1>{
+	public:
+		static vector<string> splitLast(const string& str, const string& stuff)
+		{
+			vector<string> strList;
+			int pos = str.rfind(stuff);
+			if (-1 != pos){
+				strList.push_back(str.substr(0,pos));
+				strList.push_back(str.substr(pos+1, str.length()));
+
+			}
+			strList.push_back(str);
+			return strList;
+		}
+	};
 }
 }
 

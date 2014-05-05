@@ -2,6 +2,7 @@
 #include "ProcessMessageDelegate.h"
 #include "service/ServiceContainer.h"
 #include "AppWindow.h"
+#include "utils/StringUtils.h"
 #include <string>
 using std::string;
 using namespace cptf::core;
@@ -20,6 +21,8 @@ void ProcessMessageDelegate::init()
 	vector<wstring> processMsgDelegateIIds;
 	processMsgDelegateIIds.push_back(L"30e78970-d358-11e3-a119-bc305bacf447");//BindJsProcessMsgDelegate_IID
 	processMsgDelegateIIds.push_back(L"30178970-d358-11e3-a119-bc305bacf447");//DailogProcessMsgDelegate_IID
+	processMsgDelegateIIds.push_back(L"30078970-d358-11e3-a119-bc305bacf447");//EditorProcessMsgDelegate
+	
 
 	for_each(processMsgDelegateIIds.begin(), processMsgDelegateIIds.end()
 		,bind(&ProcessMessageDelegate::appendProcessMsgImpl, this, _1));
@@ -52,7 +55,8 @@ void ProcessMessageDelegate::excuteMsg(IProcessMsgImpl* processMsg
 {
 	if (!processMsg || !browser.get() || !msg.get())return;
 
-	if(msg->GetName() != processMsg->getName())return;
+	vector<string> msgs =StringUtils<1>::splitLast(msg->GetName(), ".");
+	if(msgs.empty() || processMsg->getName() != msgs[0])return;
 
 	processMsg->excute(browser, msg);
 }

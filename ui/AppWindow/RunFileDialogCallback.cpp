@@ -1,5 +1,7 @@
 #include "StdAfx.h"
 #include "RunFileDialogCallback.h"
+#include <fstream>
+
 
 RunFileDialogCallback::RunFileDialogCallback(void)
 {
@@ -12,10 +14,18 @@ RunFileDialogCallback::~RunFileDialogCallback(void)
 void RunFileDialogCallback::OnFileDialogDismissed( CefRefPtr<CefBrowserHost> browser_host,
 												 const std::vector<CefString>& file_paths)
 {
+	if(file_paths.empty()) return;
+
 	CefRefPtr<CefProcessMessage> message =
-		CefProcessMessage::Create("DialogTest");
+		CefProcessMessage::Create("Editor.FileOpen");
 	CefRefPtr<CefListValue> args = message->GetArgumentList();
 	CefRefPtr<CefListValue> val = CefListValue::Create();
+	std::ifstream file("file_paths[0].c_str()");
+	if(file.is_open()){
+		//int length = 
+	}
+	
+
 	for (int i = 0; i < static_cast<int>(file_paths.size()); ++i)
 		val->SetString(i, file_paths[i]);
 	args->SetList(0, val);
