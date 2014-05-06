@@ -86,8 +86,8 @@ namespace core{
 	virtual bool queryInterface(const cptf::IID& iid, void**rntObj) = 0;
 
 
-#define CPTF_SERVICE_INTERFACE_ENTRY(csid,x)\
-	{csid, cptf_offsetofclass(x, _ComMapClass)},
+#define CPTF_SERVICE_INTERFACE_ENTRY(iid,x)\
+	{iid, cptf_offsetofclass(x, _ComMapClass)},
 }
 }
 

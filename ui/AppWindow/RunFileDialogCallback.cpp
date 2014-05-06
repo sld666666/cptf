@@ -1,7 +1,11 @@
 #include "StdAfx.h"
 #include "RunFileDialogCallback.h"
-#include <fstream>
+#include "../../utils/IO/FileReader.h"
+#include "service/ServiceContainer.h"
+#include "AppWindow.h"
 
+
+using namespace cptf::core;
 
 RunFileDialogCallback::RunFileDialogCallback(void)
 {
@@ -20,14 +24,16 @@ void RunFileDialogCallback::OnFileDialogDismissed( CefRefPtr<CefBrowserHost> bro
 		CefProcessMessage::Create("Editor.FileOpen");
 	CefRefPtr<CefListValue> args = message->GetArgumentList();
 	CefRefPtr<CefListValue> val = CefListValue::Create();
-	std::ifstream file("file_paths[0].c_str()");
-	if(file.is_open()){
-		//int length = 
-	}
-	
 
-	for (int i = 0; i < static_cast<int>(file_paths.size()); ++i)
-		val->SetString(i, file_paths[i]);
+	ServiceContainer<CptfModule> container(&g_cptfModule);
+	IFileReader* fileReader = static_cast<IFileReader*>(container.getService(
+		MappingFileReader_IID, IFileReader_IID));
+	if (fileReader){
+		fileReader->setFileName(file_paths[0].c_str());
+		char* content = fileReader->read();
+		val->SetString(0, content);
+	}
+
 	args->SetList(0, val);
 
 	// This will result in a call to the callback registered via JavaScript in

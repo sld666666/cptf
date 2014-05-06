@@ -42,11 +42,12 @@ namespace core{
 	};
 	typedef shared_ptr<ServiceObjectConfig> ServiceObjectConfigPtr;
 
+	template<int inst = 1>
 	class ServicesCache
 	{
 	public:
-		ServicesCache();
-		~ServicesCache();
+		ServicesCache(){}
+		~ServicesCache(){}
 
 		void		add(const cptf::IID& csid, const cptf::IID& iid, IService* service);
 		IService*	get(const cptf::IID& csid, const cptf::IID& iid);
@@ -56,15 +57,8 @@ namespace core{
 		list<ServiceObjectConfigPtr> objectConfiges_;
 	};
 
-	ServicesCache::ServicesCache(void)
-	{
-	}
-
-	ServicesCache::~ServicesCache(void)
-	{
-	}
-
-	bool ServicesCache::contains(const cptf::IID& csid
+	template<int inst>
+	bool ServicesCache<inst>::contains(const cptf::IID& csid
 		, const cptf::IID& iid)
 	{
 		bool rtn(false);
@@ -73,7 +67,8 @@ namespace core{
 		return rtn;
 	}
 
-	void ServicesCache::add(const cptf::IID& csid
+	template<int inst>
+	void ServicesCache<inst>::add(const cptf::IID& csid
 		, const cptf::IID& iid
 		, IService* service)
 	{
@@ -81,7 +76,8 @@ namespace core{
 		objectConfiges_.push_back(object);
 	}
 
-	IService* ServicesCache::get(const cptf::IID& csid
+	template<int inst>
+	IService* ServicesCache<inst>::get(const cptf::IID& csid
 		, const cptf::IID& iid)
 	{
 		list<ServiceObjectConfigPtr>::iterator iter = find_if(objectConfiges_.begin()
@@ -89,7 +85,8 @@ namespace core{
 		return (iter == objectConfiges_.end())?NULL:(*iter)->service;
 	}
 
-	void ServicesCache::release(IService* service)
+	template<int inst>
+	void ServicesCache<inst>::release(IService* service)
 	{
 		list<ServiceObjectConfigPtr>::iterator iter = find_if(objectConfiges_.begin()
 			, objectConfiges_.end(), bind(&ServiceObjectConfig::matched, _1, service));

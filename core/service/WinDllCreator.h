@@ -11,7 +11,7 @@
 #include "StdLibInclude.h"
 #include "utils/StringUtils.h"
 
-typedef bool (DLLPROC)(cptf::IID, cptf::IID, void**);
+typedef bool (DLLPROC)(const cptf::IID&, const cptf::IID&, void**);
 
 namespace cptf{
 namespace core{

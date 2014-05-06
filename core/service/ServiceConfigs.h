@@ -8,11 +8,12 @@
 namespace cptf{
 namespace core{
 
+	template<int inst = 0>
 	class ServiceConfigs 
 	{
 	public:
-		ServiceConfigs(void);
-		~ServiceConfigs(void);
+		ServiceConfigs(){init();};
+		~ServiceConfigs(){};
 	public:
 		wstring		findBundlelName(const wstring& csid);
 		wstring		getIId(const wstring& csid);
@@ -23,19 +24,10 @@ namespace core{
 		list<ServiceConfigPtr> serviceConfigs_;
 	};
 
-	typedef shared_ptr<ServiceConfigs> ServiceConfigsPtr;
+	typedef shared_ptr<ServiceConfigs<>> ServiceConfigsPtr;
 
-	ServiceConfigs::ServiceConfigs(void)
-	{
-		init();
-	}
-
-	ServiceConfigs::~ServiceConfigs(void)
-	{
-
-	}
-
-	bool ServiceConfigs::init()
+	template<int inst>
+	bool ServiceConfigs<inst>::init()
 	{
 		bool rtn(false);
 		wstring curAppPath = ApplicaitonPath<>::getCurAppPath();
@@ -46,7 +38,8 @@ namespace core{
 		return rtn;
 	}
 
-	wstring	ServiceConfigs::findBundlelName(const wstring& csid)
+	template<int inst>
+	wstring	ServiceConfigs<inst>::findBundlelName(const wstring& csid)
 	{
 		wstring bundelName;
 		list<ServiceConfigPtr>::iterator iter = find_if(serviceConfigs_.begin()
@@ -55,7 +48,8 @@ namespace core{
 		return bundelName;
 	}
 
-	wstring	ServiceConfigs::getIId(const wstring& csid)
+	template<int inst>
+	wstring	ServiceConfigs<inst>::getIId(const wstring& csid)
 	{
 		wstring iid;
 		list<ServiceConfigPtr>::iterator iter = find_if(serviceConfigs_.begin()
@@ -64,7 +58,8 @@ namespace core{
 		return iid;
 	}
 
-	vector<wstring> ServiceConfigs::getCsids(const wstring& iid)
+	template<int inst>
+	vector<wstring> ServiceConfigs<inst>::getCsids(const wstring& iid)
 	{
 		vector<wstring> csids;
 		foreach(ServiceConfigPtr config, serviceConfigs_){

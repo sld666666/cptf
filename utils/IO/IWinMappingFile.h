@@ -1,6 +1,8 @@
 #pragma once
 #include "windows.h"
-#include "../core/Log.h"
+#include "utils/Log.h"
+
+using namespace cptf;
 
 template <typename T>
 class IWinMappingFile{

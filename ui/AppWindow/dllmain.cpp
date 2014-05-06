@@ -12,8 +12,8 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 	return TRUE;
 }
 
-extern "C" __declspec(dllexport) bool dllGetClassObject(cptf::IID csid
-														, cptf::IID iid
+extern "C" __declspec(dllexport) bool dllGetClassObject(const cptf::IID& csid
+														, const cptf::IID& iid
 														, void** rntObj)
 {
 	return g_module.dllGetClassObject(csid, iid, rntObj);

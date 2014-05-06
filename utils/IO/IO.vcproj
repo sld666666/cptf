@@ -41,7 +41,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;IO_EXPORTS"
+				AdditionalIncludeDirectories="../../core/;../../3rd/"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;IO_EXPORTS;GLOG_NO_ABBREVIATED_SEVERITIES"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -60,6 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="../../3rd/glog/libs/libglog.lib"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -197,6 +199,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\MappingFileReader.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.cpp"
 				>
 				<FileConfiguration
@@ -222,6 +228,22 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath=".\dllMain.h"
+				>
+			</File>
+			<File
+				RelativePath=".\FileReader.h"
+				>
+			</File>
+			<File
+				RelativePath=".\IWinMappingFile.h"
+				>
+			</File>
+			<File
+				RelativePath=".\MappingFileReader.h"
+				>
+			</File>
 			<File
 				RelativePath=".\stdafx.h"
 				>

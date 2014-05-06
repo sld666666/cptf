@@ -18,8 +18,8 @@ namespace core{
 		bool		createService(const cptf::IID& csid, const cptf::IID& iid, void** rntObj);
 	private:
 		Creator*					creator_;
-		ServicesCache				servicesCache_;
-		ServiceConfigs				serviceConfigs_;
+		ServicesCache<>				servicesCache_;
+		ServiceConfigs<>			serviceConfigs_;
 	};
 
 	template <typename Creator>
