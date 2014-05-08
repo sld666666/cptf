@@ -1,0 +1,39 @@
+
+#in {
+	 position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 50%;
+      overflow: auto;
+      font-size: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+#out{
+	  position: fixed;
+      top: 0;
+      right: 0;
+      left: 50%;
+      bottom: 0;
+      overflow: auto;
+      padding: 10px;
+      padding-left: 20px;
+      color: #444;
+      font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+      font-size: 16px;
+      line-height: 1.5em
+}
+
+#code{
+      color: #00F;
+      font-family: monospace;
+      font-size: 0.88em;
+      border-radius:3px;
+      background-color: #F8F8F8;
+      border: 1px solid #CCC;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      
+ }
