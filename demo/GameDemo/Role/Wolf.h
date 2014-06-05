@@ -1,7 +1,6 @@
 #pragma once
-class Wolf : public ServiceCoClass<Wolf>
-					, public ObjectRoot<SingleThreadModel>
-					, public cptf::core::IDispatchImpl<IOgre>{
+class Wolf : public DefaultServiceImpl<Wolf>
+					, public IOgre{
 public:
 	static wstring	 clsid() {return Wolf_CSID;}
 	Wolf(){}

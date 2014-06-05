@@ -1,7 +1,6 @@
 #pragma once
-class Tiger : public ServiceCoClass<Tiger>
-					, public ObjectRoot<SingleThreadModel>
-					, public cptf::core::IDispatchImpl<IOgre>{
+class Tiger : public DefaultServiceImpl<Tiger>
+					, IOgre{
 public:
 	static wstring	 clsid() {return Tiger_CSID;}
 	Tiger(){}

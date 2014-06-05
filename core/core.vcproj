@@ -231,6 +231,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\service\DefaultServiceImpl.h"
+				>
+			</File>
+			<File
 				RelativePath=".\service\IDispatch.h"
 				>
 			</File>

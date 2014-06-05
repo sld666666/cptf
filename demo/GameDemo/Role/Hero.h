@@ -1,14 +1,11 @@
 #pragma once
-#include "service/ServiceCoClass.h"
-#include "service/IDispatchImpl.h"
-#include "service/ThreadModel.h"
-#include "service/ObjectRoot.h"
+
 #include "Role.h"
+#include "service/DefaultServiceImpl.h"
 using namespace cptf::core;
 
-class Hero : public ServiceCoClass<Hero>
-			, public ObjectRoot<SingleThreadModel>
-			, public cptf::core::IDispatchImpl<IHero>{
+class Hero : public DefaultServiceImpl<Hero>
+			, public IHero{
 public:
 	static wstring	 clsid() {return Hero_CSID;}
 	Hero(){}

@@ -9,9 +9,8 @@
 using namespace cptf::core;
 
 const wstring  Glogger_IID= L"30098970-d358-11e3-a119-bc305bacf447";
-class Glogger :  public IDispatchImpl<ILogger> 
-				, public ServiceCoClass<Glogger>
-				, public ObjectRoot<SingleThreadModel>
+class Glogger :  public ILogger
+				, public DefaultServiceImpl<Glogger>
 {
 public:
 	Glogger();

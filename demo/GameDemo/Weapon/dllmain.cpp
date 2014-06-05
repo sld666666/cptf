@@ -18,6 +18,7 @@ extern "C" __declspec(dllexport) bool dllGetClassObject(const cptf::IID& csid
 														, const cptf::IID& iid
 														, void** rntObj)
 {
-	return g_module.dllGetClassObject(csid, iid, rntObj);
+	//return g_module.dllGetClassObject(csid, iid, rntObj);
+	return false;
 }
 

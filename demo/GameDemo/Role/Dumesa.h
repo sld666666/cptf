@@ -1,8 +1,8 @@
 #pragma once
 class Dumesa : public ServiceCoClass<Dumesa>
 					, public ObjectRoot<SingleThreadModel>
-					, public cptf::core::IDispatchImpl<IOgre>
-					, public cptf::core::IDispatchImpl<IHumanOgre>{
+					, IOgre
+					, IHumanOgre{
 public:
 	static wstring	 clsid() {return Dumesa_CSID;}
 	Dumesa(){}
